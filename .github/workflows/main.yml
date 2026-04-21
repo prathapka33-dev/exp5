@@ -1,0 +1,13 @@
+name: Example Workflow
+
+on: [push]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use secret
+        run: echo "Secret is $MY_SECRET_KEY"
+        env:
+          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
