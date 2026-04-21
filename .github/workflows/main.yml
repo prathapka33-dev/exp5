@@ -1,17 +1,16 @@
-name: Use Secret Example
+name: Run Node App
 
 on: [push]
 
 jobs:
-  demo:
+  run-app:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Access secret
-        run: echo "Using secret..."
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-      - name: Run app
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Node app
         run: node app.js
         env:
           API_KEY: ${{ secrets.API_KEY }}
