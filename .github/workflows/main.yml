@@ -1,4 +1,4 @@
-name: Example Workflow
+name: Use Secret Example
 
 on: [push]
 
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use secret
-        run: echo "Secret is $API_KEY"
+      - name: Access secret
+        run: echo "Using secret..."
         env:
-          MY_SECRET_KEY: ${{ secrets.API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
