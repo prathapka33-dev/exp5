@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - name: Use secret
-        run: echo "Secret is $MY_SECRET_KEY"
+        run: echo "Secret is $API_KEY"
         env:
-          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
+          MY_SECRET_KEY: ${{ secrets.API_KEY }}
