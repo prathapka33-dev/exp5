@@ -9,15 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Authenticate API
         run: |
           curl -H "Authorization: Bearer $API_KEY" $API_URL
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_URL: ${{ secrets.API_URL }}
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run App
         run: node app.js
